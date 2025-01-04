@@ -17,8 +17,7 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @Getter
 @Entity
-@Table(name = "users"
-)
+@Table(name = "users")
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
