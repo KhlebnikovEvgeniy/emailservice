@@ -33,8 +33,12 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public Boolean verifyToken(String token) {
-		// TODO Auto-generated method stub
-		return null;
+		Confirmation confirmation = confirmationRepository.findByToken(token);
+		User user = userRepository.findByEmailIgnoreCase(confirmation.getUser().getEmail());
+		user.setEnabled(true);
+		userRepository.save(user);
+		//confirmationRepository.delete(confirmation);
+		return Boolean.TRUE;
 	}
 
 }
