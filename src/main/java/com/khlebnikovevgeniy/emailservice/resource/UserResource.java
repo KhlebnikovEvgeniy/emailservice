@@ -24,6 +24,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
 public class UserResource {
+	
 	private final UserService userService;
 	
 																//TODO UserDto
